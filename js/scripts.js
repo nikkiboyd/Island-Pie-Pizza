@@ -44,10 +44,10 @@ Pizza.prototype.determineCost = function(toppings) {
 
   if (this.size === "Medium") {
     cost = cost + 2;
-  } else if (this.size === "Large") {
-    cost = cost + 3;
-  } else if (this.size === "Family") {
+  } else if (this.size === "Large (+ $2.00)") {
     cost = cost + 4;
+  } else if (this.size === "Family (+ $4.00)") {
+    cost = cost + 6;
   }
   return "$" + cost + ".00";
 }
