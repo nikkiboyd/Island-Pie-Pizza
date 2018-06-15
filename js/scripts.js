@@ -20,6 +20,16 @@ Pizza.prototype.determineCost = function(toppings) {
     cost = cost + 8;
   } else if (this.toppings.length === 5) {
     cost = cost + 10;
+  } else if (this.toppings.length === 6) {
+    cost = cost + 12;
+  } else if (this.toppings.length === 7) {
+    cost = cost + 14;
+  } else if (this.toppings.length === 8) {
+    cost = cost + 16;
+  } else if (this.toppings.length === 9) {
+    cost = cost + 18;
+  } else if (this.toppings.length === 10) {
+    cost = cost + 20;
   }
 
   if (this.size === "Medium") {

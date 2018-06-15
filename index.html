@@ -13,12 +13,14 @@
   <div class="container center">
     <img id="banner-photo" src="img/island-pie-banner.jpg" alt="Island Pie Logo">
     <form class="order-form card">
-      <button id="carryout" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-        Carryout
-      </button>
-      <button id="delivery" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-        Delivery
-      </button>
+      <div class="center btn-group" role="group" aria-label="Basic example">
+        <button id="carryout" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+          Carryout
+        </button>
+        <button id="delivery" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+          Delivery
+        </button>
+      </div>
       <h2>Customer Information</h2>
       <div class="customer-info row">
         <div class="col">
@@ -57,27 +59,38 @@
       </div>
       <h2>Create Your Pizza</h2>
       <div class="form-group">
-        <label for="exampleFormControlSelect2">Toppings</label>
+        <label for="exampleFormControlSelect2">What would you like on your pizza?</label>
         <select multiple class="form-control" id="select-toppings">
           <option>Mushrooms</option>
           <option>Olives</option>
           <option>Green Peppers</option>
           <option>Artichoke Hearts</option>
           <option>Roasted Garlic</option>
+          <option>Spinach</option>
+          <option>Sun Dried Tomatoes</option>
+          <option>Black Olives</option>
+          <option>Seasonal Squash</option>
+          <option>Herb and Cheese Blend</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlSelect1">Size</label>
+        <label for="exampleFormControlSelect1">What size should we make it?</label>
         <select class="form-control" id="select-size">
           <option value=2>Medium</option>
           <option value=3>Large</option>
           <option value=4>Family</option>
         </select>
       </div>
+      <div class="form-group row">
+        <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+        <div class="col-10">
+          <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+        </div>
       <button id="submit-order-button" type="submit" class="btn btn-primary">Place Order</button>
     </form>
-    <div class="order-details">
-      <h2>Order Details:</h2>
+    <div class="card order-details">
+      <h2>Order Confirmed!</h2>
+      <h4>Details:</h4>
         <p>Name: <span id="customer-name"></span></p>
         <p>Toppings: <span id="chosen-toppings"></span></p>
         <p>Size: <span id="chosen-size"></span></p>

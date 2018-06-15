@@ -12,6 +12,7 @@ body {
 
 .order-details {
   display: none;
+  margin-top: 50px;
 }
 
 .delivery-form {
