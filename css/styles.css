@@ -8,6 +8,7 @@ h2 {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
 }
 
 .order-details {
@@ -40,10 +41,12 @@ body {
 
 .card {
   padding: 50px;
+  border-color: white;
+  border-radius: 20px;
 }
 
 #banner-photo {
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 
 #submit-order-button {

@@ -1,7 +1,8 @@
 // Back End Logic
-function Pizza(toppings, size) {
+function Pizza(toppings, size, time) {
   this.toppings = toppings;
   this.size = size;
+  this.time = time;
   var cost = this.determineCost(toppings, size);
   this.cost = cost;
 }
@@ -69,6 +70,10 @@ Pizza.prototype.getSize = function() {
   return this.size;
 }
 
+Pizza.prototype.getOrderTime = function() {
+  return this.time;
+}
+
 // Front End Logic
 $(document).ready(function() {
 $("#delivery").click(function() {
@@ -80,10 +85,10 @@ $("#delivery").click(function() {
 $("#carryout").click(function(){
   $(".delivery-form").hide();
   $("#carryout-message").fadeIn();
-  $("#delivery-message").hide()
+  $("#delivery-message").hide();
 })
 
-  $("#submit-order-button:first").click(function(event) {
+  $("#submit-order-button").click(function(event) {
     event.preventDefault();
     $(".order-form-container").fadeOut();
     $(".order-details").fadeIn();
@@ -96,12 +101,20 @@ $("#carryout").click(function(){
     var customerZip = $("#inputZip").val();
     var pizzaToppings = $("#select-toppings").val();
     var pizzaSize = $("#select-size :selected").text();
-    var newPizza = new Pizza(pizzaToppings, pizzaSize);
+    var orderTime = $("#order-time").val();
+    var newPizza = new Pizza(pizzaToppings, pizzaSize, orderTime);
     var newCustomer = new Customer(customerFirstName, customerLastName, customerAddressOne, customerAddressTwo, customerCity, customerState, customerZip);
     $("#customer-name").text(newCustomer.getCustomerName());
     $("#customer-address").text(newCustomer.getCustomerAddress());
     $("#chosen-toppings").text(newPizza.getToppings());
     $("#chosen-size").text(newPizza.getSize());
+    $("#order-time").text(newPizza.getOrderTime());
     $("#total-cost").text(newPizza.determineCost());
   });
+
+  $("#home-button").click(function(event) {
+    event.preventDefault();
+    $(".order-details").fadeOut();
+    $(".order-form-container").fadeIn();
+  })
 });

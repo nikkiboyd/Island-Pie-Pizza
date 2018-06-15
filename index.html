@@ -66,6 +66,7 @@
             </div>
           </div>
         </div>
+        <img class="center" src="img/rollingpin.jpg" style="width: 25%" alt="Rolling pin">
         <h2>Create Your Pizza</h2>
         <div class="form-group">
           <label for="exampleFormControlSelect2">What would you like on your pizza?</label>
@@ -90,15 +91,15 @@
             <option value=4>Family</option>
           </select>
         </div>
-        <div class="form-group row">
-          <p>When would you like to eat?</p>
-          <div class="col-10">
-            <input class="form-control" type="datetime-local" value="2018-06-15T19:00:00" id="example-datetime-local-input">
+          <div class="form-group row">
+            <p>What time would you like to eat?</p>
+            <div class="col-5">
+              <input class="form-control" type="time" value="19:45:00" id="order-time">
+            </div>
           </div>
-        <button id="submit-order-button" type="submit" class="center btn btn-primary">Place Order</button>
+          <button id="submit-order-button" type="submit" class="center btn btn-primary">Place Order</button>
       </form>
     </div>
-  </div>
     <div class="card order-details">
       <h2>Order Confirmed!</h2>
       <img src="img/yay.jpg" style="width: 20%" alt="">
@@ -128,6 +129,7 @@
           <p><strong>Total: </strong><br><span id="total-cost"></span></strong></p>
         </div>
       </div>
+      <button id="home-button" type="submit" class="center btn btn-primary">Order Again</button>
     </div>
   </div>
 </body>
