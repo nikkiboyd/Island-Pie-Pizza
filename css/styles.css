@@ -17,15 +17,7 @@ body {
   text-align: center;
 }
 
-.working-on-order {
-  display: none;
-}
-
-.success {
-  display: none;
-}
-
-.delivery-form {
+.success, .delivery-form, .working-on-order {
   display: none;
 }
 
