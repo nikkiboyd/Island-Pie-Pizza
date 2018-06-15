@@ -1,11 +1,16 @@
 // Back End Logic
-function Pizza(first, last, toppings, size) {
-  this.firstName = first;
-  this.lastName = last;
+function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
   var cost = this.determineCost(toppings, size);
   this.cost = cost;
+}
+
+function Customer(first, last, addressLineOne, addressLineTwo) {
+  this.firstName = first;
+  this.lastName = last;
+  this.addressLineOne = addressLineOne
+  this.addressLineTwo = addressLineTwo
 }
 
 Pizza.prototype.determineCost = function(toppings) {
@@ -42,8 +47,12 @@ Pizza.prototype.determineCost = function(toppings) {
   return "$" + cost + ".00";
 }
 
-Pizza.prototype.getCustomerName = function() {
+Customer.prototype.getCustomerName = function() {
   return this.firstName + " " + this.lastName;
+}
+
+Customer.prototype.getCustomerAddress = function() {
+  return this.addressOne + "<br>" + this.addressTwo;
 }
 
 Pizza.prototype.getToppings = function() {
@@ -72,9 +81,10 @@ $("#carryout").click(function(){
     var customerLastName = $("#input-last-name").val();
     var pizzaToppings = $("#select-toppings").val();
     var pizzaSize = $("#select-size :selected").text();
-    var newPizza = new Pizza(customerFirstName, customerLastName, pizzaToppings, pizzaSize);
-    $("#customer-name").text(newPizza.getCustomerName());
-    $("#")
+    var newPizza = new Pizza(pizzaToppings, pizzaSize);
+    var newCustomer = new Customer(customerFirstName, customerLastName);
+    $("#customer-name").text(newCustomer.getCustomerName());
+    $("#customer-address").text(newCustomer.getCustomerAddress());
     $("#chosen-toppings").text(newPizza.getToppings());
     $("#chosen-size").text(newPizza.getSize());
     $("#total-cost").text(newPizza.determineCost());
