@@ -52,10 +52,12 @@ body {
 
 #delivery-message {
   display: none;
+  text-align: center;
 }
 
 #carryout-message {
   display: none;
+  text-align: center;
 }
 
 .btn {
