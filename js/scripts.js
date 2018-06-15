@@ -6,11 +6,14 @@ function Pizza(toppings, size) {
   this.cost = cost;
 }
 
-function Customer(first, last, addressLineOne, addressLineTwo) {
+function Customer(first, last, addressLineOne, addressLineTwo, city, state, zip) {
   this.firstName = first;
   this.lastName = last;
   this.addressLineOne = addressLineOne
   this.addressLineTwo = addressLineTwo
+  this.addressCity = city;
+  this.addressState = state;
+  this.addressZip = zip;
 }
 
 Pizza.prototype.determineCost = function(toppings) {
@@ -52,7 +55,9 @@ Customer.prototype.getCustomerName = function() {
 }
 
 Customer.prototype.getCustomerAddress = function() {
-  return this.addressOne + "<br>" + this.addressTwo;
+  return this.addressLineOne + "\n"
+        + this.addressLineTwo + "\n"
+        + this.addressCity + ", " + this.addressState + " " + this.addressZip
 }
 
 Pizza.prototype.getToppings = function() {
@@ -77,9 +82,6 @@ $("#carryout").click(function(){
   $("#submit-order-button:first").click(function(event) {
     event.preventDefault();
     $(".order-form-container").fadeOut();
-    // $(".working-on-order").fadeIn();
-    // $("#success").fadeIn()
-    // $(".working-on-order").fadeOut();
     $(".order-details").fadeIn();
     var customerFirstName = $("#input-first-name").val();
     var customerLastName = $("#input-last-name").val();
@@ -91,7 +93,7 @@ $("#carryout").click(function(){
     var pizzaToppings = $("#select-toppings").val();
     var pizzaSize = $("#select-size :selected").text();
     var newPizza = new Pizza(pizzaToppings, pizzaSize);
-    var newCustomer = new Customer(customerFirstName, customerLastName);
+    var newCustomer = new Customer(customerFirstName, customerLastName, customerAddressOne, customerAddressTwo, customerCity, customerState, customerZip);
     $("#customer-name").text(newCustomer.getCustomerName());
     $("#customer-address").text(newCustomer.getCustomerAddress());
     $("#chosen-toppings").text(newPizza.getToppings());
