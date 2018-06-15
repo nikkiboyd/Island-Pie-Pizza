@@ -1,8 +1,9 @@
 // Back End Logic
-function Pizza(toppings, size, time) {
+function Pizza(toppings, size, time, request) {
   this.toppings = toppings;
   this.size = size;
   this.time = time;
+  this.request = request;
   var cost = this.determineCost(toppings, size);
   this.cost = cost;
 }
@@ -74,6 +75,11 @@ Pizza.prototype.getOrderTime = function() {
   return this.time;
 }
 
+
+Pizza.prototype.getRequests = function() {
+  return this.request;
+}
+
 // Front End Logic
 $(document).ready(function() {
 $("#delivery").click(function() {
@@ -101,15 +107,17 @@ $("#carryout").click(function(){
     var customerZip = $("#inputZip").val();
     var pizzaToppings = $("#select-toppings").val();
     var pizzaSize = $("#select-size :selected").text();
+    var specialRequests = $("#request-box").val();
     var orderTime = $("#order-time").val();
-    var newPizza = new Pizza(pizzaToppings, pizzaSize, orderTime);
+    var newPizza = new Pizza(pizzaToppings, pizzaSize, orderTime, specialRequests);
     var newCustomer = new Customer(customerFirstName, customerLastName, customerAddressOne, customerAddressTwo, customerCity, customerState, customerZip);
     $("#customer-name").text(newCustomer.getCustomerName());
     $("#customer-address").text(newCustomer.getCustomerAddress());
     $("#chosen-toppings").text(newPizza.getToppings());
     $("#chosen-size").text(newPizza.getSize());
-    $("#order-time").text(newPizza.getOrderTime());
+    $("#target-time").text(newPizza.getOrderTime());
     $("#total-cost").text(newPizza.determineCost());
+    $("#special-requests").text(newPizza.getRequests());
   });
 
   $("#home-button").click(function(event) {
