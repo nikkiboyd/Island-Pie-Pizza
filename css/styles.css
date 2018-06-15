@@ -1,7 +1,9 @@
 h2 {
+  padding: 10px;
   font-family: 'Prata', serif;
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
+  font-weight: bold;
 }
 
 body {
@@ -10,6 +12,14 @@ body {
 
 .order-details {
   display: none;
+}
+
+/* .form-group {
+  padding: 20px;
+} */
+
+.customer-info {
+  padding-bottom: 30px;
 }
 
 .center {
