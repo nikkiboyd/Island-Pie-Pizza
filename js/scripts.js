@@ -73,10 +73,14 @@ Pizza.prototype.getSize = function() {
 $(document).ready(function() {
 $("#delivery").click(function() {
   $(".delivery-form").show();
+  $("#delivery-message").fadeIn();
+  $("#carryout-message").hide();
 });
 
 $("#carryout").click(function(){
   $(".delivery-form").hide();
+  $("#carryout-message").fadeIn();
+  $("#delivery-message").hide()
 })
 
   $("#submit-order-button:first").click(function(event) {

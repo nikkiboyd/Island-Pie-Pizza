@@ -50,6 +50,14 @@ body {
   margin-top: 30px;
 }
 
+#delivery-message {
+  display: none;
+}
+
+#carryout-message {
+  display: none;
+}
+
 .btn {
   background-color: #b0cd56;
   border-color: lightgrey;
