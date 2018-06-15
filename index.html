@@ -6,13 +6,47 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.3.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Webpage Title</title>
+  <title>Island Pie Pizza</title>
 </head>
 <body>
-  <h1>Webpage Title</h1>
+  <h1>Island Pie</h1>
   <div class="container">
-    <form class="bank-form">
+    <form class="order-form">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Toppings</label>
+        <select multiple class="form-control" id="select-toppings">
+          <option>Mushrooms</option>
+          <option>Olives</option>
+          <option>Green Peppers</option>
+          <option>Artichoke Hearts</option>
+          <option>Roasted Garlic</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Size</label>
+        <select class="form-control" id="select-size">
+          <option>Medium</option>
+          <option>Large</option>
+          <option>Family</option>
+        </select>
+      </div>
+      <button id="submit-order-button" type="submit" class="btn btn-primary">Order pizza!</button>
     </form>
+    <div class="order-details">
+      <h2>Order Details:</h2>
+        <p>Name: <span id="customer-name"></span></p>
+        <p>Toppings: <span id="chosen-toppings"></span></p>
+        <p>Size: <span id="chosen-size"></span></p>
+        <p>Cost: <span id="total-cost"></span></p>
+    </div>
   </div>
 </body>
 </html>
