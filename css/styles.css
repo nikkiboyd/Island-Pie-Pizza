@@ -1,0 +1,17 @@
+.order-details {
+  display: none;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.card {
+  padding: 50px;
+}
+
+#banner-photo {
+  padding-bottom: 50px;
+}

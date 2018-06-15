@@ -49,6 +49,7 @@ Pizza.prototype.getSize = function() {
 $(document).ready(function() {
   $("#submit-order-button").click(function(event) {
     event.preventDefault();
+    $(".order-details").fadeIn();
     var customerFirstName = $("#input-first-name").val();
     var customerLastName = $("#input-last-name").val();
     var pizzaToppings = $("#select-toppings").val();
