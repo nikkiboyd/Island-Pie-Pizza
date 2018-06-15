@@ -21,15 +21,15 @@ Pizza.prototype.determineCost = function(toppings) {
   } else if (this.toppings.length === 5) {
     cost = cost + 10;
   }
-  return cost;
 
-  if (this.size = "Medium") {
+  if (this.size === "Medium") {
     cost = cost + 2;
-  } else if (this.size = "Large") {
+  } else if (this.size === "Large") {
+    cost = cost + 3;
+  } else if (this.size === "Family") {
     cost = cost + 4;
   }
-  
-  return cost;
+  return "$" + cost + ".00";
 }
 
 Pizza.prototype.getCustomerName = function() {
