@@ -74,6 +74,7 @@ $("#carryout").click(function(){
     var pizzaSize = $("#select-size :selected").text();
     var newPizza = new Pizza(customerFirstName, customerLastName, pizzaToppings, pizzaSize);
     $("#customer-name").text(newPizza.getCustomerName());
+    $("#")
     $("#chosen-toppings").text(newPizza.getToppings());
     $("#chosen-size").text(newPizza.getSize());
     $("#total-cost").text(newPizza.determineCost());
