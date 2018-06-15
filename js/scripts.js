@@ -59,7 +59,7 @@ Customer.prototype.getCustomerName = function() {
 Customer.prototype.getCustomerAddress = function() {
   return this.addressLineOne + "\n"
         + this.addressLineTwo + "\n"
-        + this.addressCity + ", " + this.addressState + " " + this.addressZip
+        + this.addressCity + " " + this.addressState + " " + this.addressZip
 }
 
 Pizza.prototype.getToppings = function() {
