@@ -71,6 +71,7 @@
         <div class="form-group">
           <label for="exampleFormControlSelect2">What would you like on your pizza?</label>
           <select multiple class="form-control" id="select-toppings">
+            <option>Extra Cheese</option>
             <option>Mushrooms</option>
             <option>Olives</option>
             <option>Green Peppers</option>
@@ -101,13 +102,15 @@
             <label for="exampleFormControlTextarea1">Any special requests?</label>
             <textarea class="form-control" id="request-box" rows="3" placeholder="Extra red pepper flakes and parmesan, please!"></textarea>
           </div>
-          <button id="submit-order-button" type="submit" class="center btn btn-primary">Place Order</button>
+        <button id="submit-order-button" type="submit" class="center btn btn-primary">Place Order</button>
       </form>
     </div>
     <div class="card order-details">
       <h2>Order Confirmed!</h2>
       <img src="img/yay.jpg" style="width: 20%" alt="">
       <p>Thank you for your business.</p>
+      <br>
+      <br>
       <h2>Details:</h2>
       <div class="row">
         <div class="col-md-6">
@@ -130,7 +133,7 @@
           <p><strong>Ready by: </strong><br><span id="target-time"></span><p>
         </div>
         <div class="col-md-6">
-          <p><strong>Total: </strong><br><span id="total-cost"></span></strong></p>
+          <p><strong>Total: </strong><br><span class="total-cost"></span></strong></p>
         </div>
       </div>
       <div class="row">

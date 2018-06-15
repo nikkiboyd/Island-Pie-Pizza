@@ -82,17 +82,17 @@ Pizza.prototype.getRequests = function() {
 
 // Front End Logic
 $(document).ready(function() {
-$("#delivery").click(function() {
-  $(".delivery-form").show();
-  $("#delivery-message").fadeIn();
-  $("#carryout-message").hide();
-});
+  $("#delivery").click(function() {
+    $(".delivery-form").show();
+    $("#delivery-message").fadeIn();
+    $("#carryout-message").hide();
+  });
 
-$("#carryout").click(function(){
-  $(".delivery-form").hide();
-  $("#carryout-message").fadeIn();
-  $("#delivery-message").hide();
-})
+  $("#carryout").click(function(){
+    $(".delivery-form").hide();
+    $("#carryout-message").fadeIn();
+    $("#delivery-message").hide();
+  });
 
   $("#submit-order-button").click(function(event) {
     event.preventDefault();
@@ -116,13 +116,19 @@ $("#carryout").click(function(){
     $("#chosen-toppings").text(newPizza.getToppings());
     $("#chosen-size").text(newPizza.getSize());
     $("#target-time").text(newPizza.getOrderTime());
-    $("#total-cost").text(newPizza.determineCost());
+    $(".total-cost").text(newPizza.determineCost());
     $("#special-requests").text(newPizza.getRequests());
+  });
+
+  $("#total-button").click(function(event) {
+    event.preventDefault();
+    $("#total-preview").fadeIn();
   });
 
   $("#home-button").click(function(event) {
     event.preventDefault();
     $(".order-details").fadeOut();
     $(".order-form-container").fadeIn();
+    $('.order-form')[0].reset();
   })
 });
