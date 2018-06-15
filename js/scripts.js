@@ -76,9 +76,18 @@ $("#carryout").click(function(){
 
   $("#submit-order-button:first").click(function(event) {
     event.preventDefault();
+    $(".order-form-container").fadeOut();
+    // $(".working-on-order").fadeIn();
+    // $("#success").fadeIn()
+    // $(".working-on-order").fadeOut();
     $(".order-details").fadeIn();
     var customerFirstName = $("#input-first-name").val();
     var customerLastName = $("#input-last-name").val();
+    var customerAddressOne = $("#inputAddress").val();
+    var customerAddressTwo = $("#inputAddress2").val();
+    var customerCity = $("#inputCity").val();
+    var customerState = $("#inputState").val();
+    var customerZip = $("#inputZip").val();
     var pizzaToppings = $("#select-toppings").val();
     var pizzaSize = $("#select-size :selected").text();
     var newPizza = new Pizza(pizzaToppings, pizzaSize);

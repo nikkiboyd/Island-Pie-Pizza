@@ -11,9 +11,17 @@ body {
 }
 
 .order-details {
+  margin-bottom: 30px;
   display: none;
-  margin-top: 50px;
   text-align: center;
+}
+
+.working-on-order {
+  display: none;
+}
+
+.success {
+  display: none;
 }
 
 .delivery-form {

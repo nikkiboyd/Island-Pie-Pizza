@@ -12,82 +12,85 @@
 <body>
   <div class="container center">
     <img id="banner-photo" src="img/island-pie-banner.jpg" alt="Island Pie Logo">
-    <form class="order-form card">
-      <div class="center btn-group" role="group" aria-label="Basic example">
-        <button id="carryout" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-          Carryout
-        </button>
-        <button id="delivery" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-          Delivery
-        </button>
-      </div>
-      <h2>Customer Information</h2>
-      <div class="customer-info row">
-        <div class="col">
-          <input id="input-first-name" type="text" class="form-control" placeholder="First name">
+    <div class="order-form-container">
+      <form class="order-form card">
+        <div class="center btn-group" role="group" aria-label="Basic example">
+          <button id="carryout" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Carryout
+          </button>
+          <button id="delivery" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Delivery
+          </button>
         </div>
-        <div class="col">
-          <input id="input-last-name" type="text" class="form-control" placeholder="Last name">
+        <h2>Customer Information</h2>
+        <div class="customer-info row">
+          <div class="col">
+            <input id="input-first-name" type="text" class="form-control" placeholder="First name">
+          </div>
+          <div class="col">
+            <input id="input-last-name" type="text" class="form-control" placeholder="Last name">
+          </div>
         </div>
-      </div>
-      <div class="delivery-form">
+        <div class="delivery-form">
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Deer Harbor Drive">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, unit, suite">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>Washington</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+          </div>
+        </div>
+        <h2>Create Your Pizza</h2>
         <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Deer Harbor Drive">
+          <label for="exampleFormControlSelect2">What would you like on your pizza?</label>
+          <select multiple class="form-control" id="select-toppings">
+            <option>Mushrooms</option>
+            <option>Olives</option>
+            <option>Green Peppers</option>
+            <option>Artichoke Hearts</option>
+            <option>Roasted Garlic</option>
+            <option>Spinach</option>
+            <option>Sun Dried Tomatoes</option>
+            <option>Black Olives</option>
+            <option>Seasonal Squash</option>
+            <option>Herb and Cheese Blend</option>
+          </select>
         </div>
         <div class="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, unit, suite">
+          <label for="exampleFormControlSelect1">What size should we make it?</label>
+          <select class="form-control" id="select-size">
+            <option value=2>Medium</option>
+            <option value=3>Large</option>
+            <option value=4>Family</option>
+          </select>
         </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
+        <div class="form-group row">
+          <p>When would you like to eat?</p>
+          <div class="col-10">
+            <input class="form-control" type="datetime-local" value="2018-06-15T19:00:00" id="example-datetime-local-input">
           </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>Washington</option>
-            </select>
-          </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-          </div>
-        </div>
-      </div>
-      <h2>Create Your Pizza</h2>
-      <div class="form-group">
-        <label for="exampleFormControlSelect2">What would you like on your pizza?</label>
-        <select multiple class="form-control" id="select-toppings">
-          <option>Mushrooms</option>
-          <option>Olives</option>
-          <option>Green Peppers</option>
-          <option>Artichoke Hearts</option>
-          <option>Roasted Garlic</option>
-          <option>Spinach</option>
-          <option>Sun Dried Tomatoes</option>
-          <option>Black Olives</option>
-          <option>Seasonal Squash</option>
-          <option>Herb and Cheese Blend</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">What size should we make it?</label>
-        <select class="form-control" id="select-size">
-          <option value=2>Medium</option>
-          <option value=3>Large</option>
-          <option value=4>Family</option>
-        </select>
-      </div>
-      <div class="form-group row">
-        <p>When would you like to eat?</p>
-        <div class="col-10">
-          <input class="form-control" type="datetime-local" value="2018-06-15T19:00:00" id="example-datetime-local-input">
-        </div>
-      <button id="submit-order-button" type="submit" class="center btn btn-primary">Place Order</button>
-    </form>
+        <button id="submit-order-button" type="submit" class="center btn btn-primary">Place Order</button>
+      </form>
+    </div>
+  </div>
     <div class="card order-details">
       <h2>Order Confirmed!</h2>
       <p>Thank you for your business.</p>
