@@ -57,9 +57,9 @@ Customer.prototype.getCustomerName = function() {
 }
 
 Customer.prototype.getCustomerAddress = function() {
-  return this.addressLineOne + "\n"
-        + this.addressLineTwo + "\n"
-        + this.addressCity + " " + this.addressState + " " + this.addressZip
+  return this.addressLineOne + "\n" +
+    this.addressLineTwo + "\n" +
+    this.addressCity + " " + this.addressState + " " + this.addressZip
 }
 
 Pizza.prototype.getToppings = function() {
@@ -88,7 +88,7 @@ $(document).ready(function() {
     $("#carryout-message").hide();
   });
 
-  $("#carryout").click(function(){
+  $("#carryout").click(function() {
     $(".delivery-form").hide();
     $("#carryout-message").fadeIn();
     $("#delivery-message").hide();
