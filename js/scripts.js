@@ -47,7 +47,15 @@ Pizza.prototype.getSize = function() {
 
 // Front End Logic
 $(document).ready(function() {
-  $("#submit-order-button").click(function(event) {
+$("#delivery").click(function() {
+  $(".delivery-form").show();
+});
+
+$("#carryout").click(function(){
+  $(".delivery-form").hide();
+})
+
+  $("#submit-order-button:first").click(function(event) {
     event.preventDefault();
     $(".order-details").fadeIn();
     var customerFirstName = $("#input-first-name").val();
